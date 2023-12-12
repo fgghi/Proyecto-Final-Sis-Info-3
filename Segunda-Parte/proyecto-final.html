@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Mapa de Ciudades</title>
+    <link rel="icon" href="./leaflet/images/latam.jpg" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="leaflet/leaflet.css" />
@@ -23,11 +23,11 @@
 
         function getColor(population) {
             if (population > 20000000) {
-                return '#FF0000'; 
+                return '#FF0000';
             } else if (population > 10000000 && population <= 20000000) {
-                return '#FF8000'; 
+                return '#FF8000';
             } else {
-                return '#0000FF'; 
+                return '#0000FF';
             }
         }
 
@@ -44,7 +44,17 @@
                         opacity: 1,
                         fillOpacity: 0.8
                     });
+
                     circleMarker.bindPopup(`<b>Ciudad: ${feature.properties.Nombre}</b><br>Pais: ${feature.properties.País} <br> Población en 2023: ${population}`);
+
+                    circleMarker.on('mouseover', function (e) {
+                        this.openPopup();
+                    });
+
+                    circleMarker.on('mouseout', function (e) {
+                        this.closePopup();
+                    });
+
                     circleMarker.addTo(map);
                     return circleMarker;
                 },
