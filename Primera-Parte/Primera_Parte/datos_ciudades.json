@@ -1,0 +1,155 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -46.6333824,
+                    -23.5506507
+                ]
+            },
+            "properties": {
+                "Nombre": "Sao Paulo",
+                "País": "Brasil",
+                "Población 2023": "22619736"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -99.1331785,
+                    19.4326296
+                ]
+            },
+            "properties": {
+                "Nombre": "Ciudad de México",
+                "País": "México",
+                "Población 2023": "22281442"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -58.381642,
+                    -34.6037157
+                ]
+            },
+            "properties": {
+                "Nombre": "Buenos Aires",
+                "País": "Argentina",
+                "Población 2023": "15490415"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -43.2093727,
+                    -22.9110137
+                ]
+            },
+            "properties": {
+                "Nombre": "Río de Janeiro",
+                "País": "Brasil",
+                "Población 2023": "13727720"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0835643,
+                    4.6529539
+                ]
+            },
+            "properties": {
+                "Nombre": "Bogotá",
+                "País": "Colombia",
+                "Población 2023": "11507960"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0365256,
+                    -12.0621065
+                ]
+            },
+            "properties": {
+                "Nombre": "Lima",
+                "País": "Perú",
+                "Población 2023": "11204382"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -70.6504502,
+                    -33.4377756
+                ]
+            },
+            "properties": {
+                "Nombre": "Santiago",
+                "País": "Chile",
+                "Población 2023": "6903392"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -43.9450948,
+                    -19.9227318
+                ]
+            },
+            "properties": {
+                "Nombre": "Belo Horizonte",
+                "País": "Brasil",
+                "Población 2023": "6247889"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -103.338396,
+                    20.6720375
+                ]
+            },
+            "properties": {
+                "Nombre": "Guadalajara",
+                "País": "México",
+                "Población 2023": "5419880"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -100.315258,
+                    25.6802019
+                ]
+            },
+            "properties": {
+                "Nombre": "Monterrey",
+                "País": "México",
+                "Población 2023": "5116647"
+            }
+        }
+    ]
+}

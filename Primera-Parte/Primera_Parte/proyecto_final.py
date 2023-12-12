@@ -3,17 +3,17 @@ from bs4 import BeautifulSoup
 import re
 import json
 from geopy.geocoders import Nominatim
-from dagster import asset, AssetIn, ModeDefinition, fs_asset
+from dagster import asset, AssetIn
 
 
-@asset
 def get_city_data():
     url = "https://www.archdaily.cl/cl/1003731/estas-son-las-ciudades-mas-pobladas-de-america-latina-en-2023"
     response = requests.get(url)
     html_content = response.text
     soup = BeautifulSoup(html_content, 'html.parser')
     ciudades = extraer_datos_ciudades(soup)
-    return AssetIn("ciudades_data", ciudades)
+
+    return ciudades
 
 @asset
 def obtener_population(p_tag):
@@ -77,7 +77,7 @@ def guardar_datos_json(ciudades):
     with open("datos_ciudades.json", "w", encoding="utf-8") as geojson_file:
         json.dump(ciudades, geojson_file, ensure_ascii=False, indent=4)
 
-@asset
+
 def main():
     ciudades_data = get_city_data()
     guardar_datos_json(ciudades_data)
