@@ -6,6 +6,7 @@ from geopy.geocoders import Nominatim
 from dagster import asset, AssetIn
 
 
+@asset
 def get_city_data():
     url = "https://www.archdaily.cl/cl/1003731/estas-son-las-ciudades-mas-pobladas-de-america-latina-en-2023"
     response = requests.get(url)
@@ -14,6 +15,7 @@ def get_city_data():
     ciudades = extraer_datos_ciudades(soup)
 
     return ciudades
+
 
 @asset
 def obtener_population(p_tag):
@@ -30,6 +32,7 @@ def obtener_population(p_tag):
 
     return None
 
+
 @asset
 def obtener_coordenadas(ciudad, pais):
     geolocalizador = Nominatim(user_agent="myGeocoder")
@@ -40,6 +43,7 @@ def obtener_coordenadas(ciudad, pais):
         return ubicacion.latitude, ubicacion.longitude
     else:
         return None, None
+
 
 @asset
 def extraer_datos_ciudades(soup):
@@ -73,6 +77,7 @@ def extraer_datos_ciudades(soup):
 
     return ciudades
 
+
 def guardar_datos_json(ciudades):
     with open("datos_ciudades.json", "w", encoding="utf-8") as geojson_file:
         json.dump(ciudades, geojson_file, ensure_ascii=False, indent=4)
@@ -81,6 +86,7 @@ def guardar_datos_json(ciudades):
 def main():
     ciudades_data = get_city_data()
     guardar_datos_json(ciudades_data)
+
 
 if __name__ == "__main__":
     main()

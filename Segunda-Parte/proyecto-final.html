@@ -52,7 +52,7 @@
         }
 
         function fetchCityData() {
-            fetch('datos_ciudades.json')
+            fetch('../Primera-Parte/Primera_Parte/datos_ciudades.json')
                 .then((response) => response.json())
                 .then((featureCollection) => {
                     addMarkersToMap(featureCollection);
