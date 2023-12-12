@@ -15,7 +15,7 @@ def get_city_data():
     ciudades = extraer_datos_ciudades(soup)
     return AssetIn("ciudades_data", ciudades)
 
-
+@asset
 def obtener_population(p_tag):
     population_text = p_tag.get_text()
     population_match_2023 = re.search(r"Población 2023:\s*([\d,]+)", population_text)
@@ -30,7 +30,7 @@ def obtener_population(p_tag):
 
     return None
 
-
+@asset
 def obtener_coordenadas(ciudad, pais):
     geolocalizador = Nominatim(user_agent="myGeocoder")
     direccion = f"{ciudad}, {pais}"
@@ -41,7 +41,7 @@ def obtener_coordenadas(ciudad, pais):
     else:
         return None, None
 
-
+@asset
 def extraer_datos_ciudades(soup):
     ciudades = {"type": "FeatureCollection", "features": []}
 
@@ -73,17 +73,14 @@ def extraer_datos_ciudades(soup):
 
     return ciudades
 
-
 def guardar_datos_json(ciudades):
     with open("datos_ciudades.json", "w", encoding="utf-8") as geojson_file:
         json.dump(ciudades, geojson_file, ensure_ascii=False, indent=4)
 
-
+@asset
 def main():
     ciudades_data = get_city_data()
     guardar_datos_json(ciudades_data)
 
-
-# Run this block only if the script is executed, not when imported
 if __name__ == "__main__":
     main()
